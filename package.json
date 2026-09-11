@@ -1,0 +1,63 @@
+{
+  "name": "vitepress-spa-fallback",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.33.0",
+  "description": "Vite plugin for VitePress SPA fallback.",
+  "author": "holazz",
+  "license": "MIT",
+  "homepage": "https://github.com/holazz/vitepress-spa-fallback#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holazz/vitepress-spa-fallback"
+  },
+  "bugs": {
+    "url": "https://github.com/holazz/vitepress-spa-fallback/issues"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "README.md",
+    "README.zh-CN.md",
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp",
+    "prepack": "pnpm build",
+    "prepare": "simple-git-hooks"
+  },
+  "peerDependencies": {
+    "vitepress": "2.0.0-alpha.20"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.19.0",
+    "@types/node": "^26.0.0",
+    "bumpp": "^10.2.3",
+    "eslint": "^9.39.4",
+    "simple-git-hooks": "^2.13.1",
+    "tsdown": "^0.16.8",
+    "typescript": "^5.8.3",
+    "vite": "8.2.2",
+    "vitepress": "2.0.0-alpha.20",
+    "vitest": "^4.1.10"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint:fix && pnpm typecheck"
+  }
+}

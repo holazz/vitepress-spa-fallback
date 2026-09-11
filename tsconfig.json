@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src",
+    "tests",
+    "tsdown.config.ts",
+    "eslint.config.ts"
+  ]
+}
